@@ -1,5 +1,159 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: grid;
+  padding: 10px;
+  gap: var(--section_gap);
+  background-color: var(--background-color);
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  color: var(--main-text-color);
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.link {
+  text-shadow: 2px 1px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  border: 1px solid var(--main-text-color);
+}
+
+.header {
+  display: grid;
+}
+
+.decorated-zone::before {
+  content: "";
+  width: 25.04px;
+  height: 25px;
+  justify-self: end;
+  border: 1px solid var(--decoration-color);
+  border-bottom-style: none;
+  border-left-style: none;
+}
+
+.decorated-zone::after {
+  content: "";
+  width: 25.04px;
+  height: 25px;
+  justify-self: start;
+  border: 1px solid var(--decoration-color);
+  border-top-style: none;
+  border-right-style: none;
+}
+
+.header__theme-menu {
+  display: grid;
+  justify-content: end;
+  margin-top: 65px;
+}
+
+.header__theme-menu-list {
+  list-style: none;
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header__theme-menu-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  width: 70px;
+  height: 26px;
+  color: var(--theme_switcher_color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--theme_switcher_color_hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--theme_switcher_color);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--theme_switcher_color);
+  pointer-events: none;
+}
+
+.heading {
+  display: block;
+  font-family: var(--main-font);
+  font-size: var(--h1-font-size);
+  color: var(--heading-text-color);
+  font-weight: bold;
+  line-height: 82.5%;
+}
+
+.header__heading {
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin-top: 65px;
+  margin-bottom: 55px;
+}
+
+.footer__heading {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.title {
+  display: block;
+  font-weight: bold;
+  font-size: var(--main-font-size);
+  line-height: 1.46rem;
+  color: var(--title-text-color);
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--title-decorated-text-color);
+}
+
+.header__title_bottom_gap {
+  margin-bottom: 31px;
+}
+
+.content_block {
+  display: grid;
+  gap: var(--title_gap);
+}
+
+.content_text {
+  display: grid;
+  gap: var(--text_gap);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gallery_gap);
+}
+
+.gallery_item{
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  display: grid;
 }
