@@ -2,7 +2,6 @@
 
 .page {
   display: grid;
-  padding: 10px;
   gap: var(--section_gap);
   background-color: var(--background-color);
   font-family: var(--main-font);
@@ -33,10 +32,22 @@
 
 .header {
   display: grid;
+  grid-template-rows: 1fr min-content 1fr; 
+  align-items: center;
+  block-size: 100svh;
+  min-block-size: 668px;
+  padding: 10px 10px 0 10px;
+}
+
+.decorated-zone {
+  position: relative;
 }
 
 .decorated-zone::before {
+  position: absolute;
   content: "";
+  top: 10px;
+  right: 10px;
   width: 25.04px;
   height: 25px;
   justify-self: end;
@@ -46,6 +57,9 @@
 }
 
 .decorated-zone::after {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
   content: "";
   width: 25.04px;
   height: 25px;
@@ -56,27 +70,29 @@
 }
 
 .header__theme-menu {
-  display: grid;
-  justify-content: end;
-  margin-top: 65px;
+  justify-self: end;
 }
 
 .header__theme-menu-list {
   list-style: none;
   appearance: none;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  
 }
 
 .header__theme-menu-button {
+  display: inline-block;
   cursor: pointer;
   background-color: transparent;
   border: none;
   text-transform: lowercase;
-  width: 70px;
-  height: 26px;
+  min-inline-size: 70px;
+  min-block-size: 26px;
   color: var(--theme_switcher_color);
 }
 
@@ -108,8 +124,7 @@
 
 .header__heading {
   text-shadow: 4px 4px 0 var(--accent-color);
-  margin-top: 65px;
-  margin-bottom: 55px;
+  align-self: center;
 }
 
 .footer__heading {
@@ -124,13 +139,10 @@
   color: var(--title-text-color);
 }
 
+
 .title-decor {
   background-color: var(--accent-color);
   color: var(--title-decorated-text-color);
-}
-
-.header__title_bottom_gap {
-  margin-bottom: 31px;
 }
 
 .content_block {
@@ -156,4 +168,23 @@
 
 .footer {
   display: grid;
+}
+
+@media (min-width: 768px) {
+
+  .header {
+    min-block-size: 1024px;
+    padding: 10px 10px 0 10px;
+  }
+
+  .title-header {
+    display: block;
+    inline-size: 364px;
+    justify-self: end;
+  }
+
+  .why {
+    
+  }
+
 }
