@@ -19,4 +19,15 @@
   --title_gap: 20px;
   --text_gap: 10px;
   --gallery_gap: 10px;
+  --padding: 10px;
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 768px) {
+  :root {
+    --padding: 20px;
+    --gallery_gap: 20px;
+  }
 }

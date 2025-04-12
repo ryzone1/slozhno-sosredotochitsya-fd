@@ -21,6 +21,9 @@ h6,
 p {
   margin: 0;
   font-weight: normal;
+  font-size: var(--main-font-size);
+  line-height: 23.4px;
+  text-wrap: pretty;
 }
 
 ul {
@@ -40,4 +43,8 @@ a {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+}
+
+h2 {
+  font-weight: bold;
 }

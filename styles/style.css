@@ -12,13 +12,63 @@
   background-attachment: fixed;
 }
 
+.make_grid {
+  display: grid;
+}
+
+/* Отступы */
+
+.title_to_article_gap {
+  gap: var(--title_gap);
+}
+
+.section_to_section_gap {
+  gap: var(--section_gap);
+}
+
+.title_to_text_gap {
+  gap: var(--text_gap);
+}
+
+.gallery_gap {
+  gap: var(--gallery_gap);
+}
+
+.padding {
+  padding: 0 var(--padding) 0 var(--padding);
+}
+
+.header_padding {
+  padding: var(--padding);
+}
+
+/* Стили для ссылок */
+
+.link {
+  text-shadow: 2px 1px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  border: 1px solid var(--main-text-color);
+}
+
+/* Хедер и всё что в нем */
+
 .header {
   block-size: 100svh;
   min-block-size: 668px;
   display: grid; 
   grid-template-columns: 100%; 
   grid-template-rows: 1fr min-content 1fr; 
-  gap: 0px 0px; 
   grid-template-areas: 
     "theme-menu"
     "heading"
@@ -35,8 +85,8 @@
 .decorated-zone::before {
   position: absolute;
   content: "";
-  top: 10px;
-  right: 10px;
+  top: var(--padding);
+  right: var(--padding);
   width: 25.04px;
   height: 25px;
   justify-self: end;
@@ -47,8 +97,8 @@
 
 .decorated-zone::after {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: var(--padding);
+  left: var(--padding);
   content: "";
   width: 25.04px;
   height: 25px;
@@ -72,19 +122,31 @@
 }
 
 .header__theme-menu-button {
+  line-height: 1;
   display: inline-block;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  text-transform: lowercase;
   min-inline-size: 70px;
-  min-block-size: 26px;
+  background-color: transparent;
+  text-transform: lowercase;
+  padding-bottom: 5px;
   color: var(--theme_switcher_color);
+  border: none;
 }
 
 .header__theme-menu-button_active {
   border: 1px solid var(--theme_switcher_color);
   pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--theme_switcher_color_hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--theme_switcher_color);
 }
 
 .header__heading {
@@ -104,10 +166,12 @@
 }
 
 .header__title {
+  display: block;
   grid-area: header_title;
-  justify-self: end;
   font-weight: bold;
 }
+
+/* Заголовки, секции*/
 
 .title-decor {
   background-color: var(--accent-color);
@@ -116,14 +180,47 @@
 
 .content-section {
   display: grid;
-  gap: var(--title_gap);
 }
 
 .content-section h2, h3 {
   font-weight: bold;
-  font-size: var(--main-font-size);
   color: var(--title-text-color);
 }
+
+.content_container {
+  display: grid;
+}
+
+/* Галерея (если ее можно так назвать, скорее просто блок картинок*/
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.gallery_image{
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: cover;
+}
+
+/* Футер */
+
+.footer {
+  block-size: 100svh;
+  min-block-size: 668px;
+  display: grid; 
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__heading {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+/* Медиазапросы */
 
 @media (min-width: 768px) {
 
@@ -133,6 +230,10 @@
       ". theme-menu"
       "heading heading"
       ". header_title"; 
+}
+
+  .heading {
+    margin-left: calc(var(--padding) * -1);
 }
 
   .content-section {
@@ -147,15 +248,42 @@
     grid-column: span 3
   }
 
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery_image_2_columns {
+    grid-column: span 2;
+  }
+
+  .gallery_image_2_rows {
+    grid-row: span 2;
+  }
 }
 
 @media (min-width: 1024px) {
-
-  .mod1 {
-    grid-row: span 3
+  
+  .header {
+    grid-template-areas: 
+    "theme-menu theme-menu"
+    "heading heading"
+    ". header_title"; 
   }
 
-  .mod2 {
-    grid-column: initial;
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
   }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .content_container__cards {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+    justify-content: center;
+  }
+
 }
