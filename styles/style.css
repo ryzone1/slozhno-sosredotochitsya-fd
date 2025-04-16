@@ -2,11 +2,11 @@
 
 .page {
   display: grid;
-  background-color: var(--background-color);
-  font-family: var(--main-font);
-  font-size: var(--main-font-size);
-  color: var(--main-text-color);
-  background-image: var(--background-image);
+  background-color: var(--background-color, #fdf3f7);
+  font-family: var(--main-font, 'IBM Plex mono'), monospace;
+  font-size: var(--main-font-size, 1.125rem);
+  color: var(--main-text-color, #353430);
+  background-image: var(--background-image, url(../images/cover-image-light.png));
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -19,38 +19,38 @@
 /* Отступы */
 
 .title_to_article_gap {
-  gap: var(--title_gap);
+  gap: var(--title_gap, 20px);
 }
 
 .section_to_section_gap {
-  gap: var(--section_gap);
+  gap: var(--section_gap, 50px);
 }
 
 .title_to_text_gap {
-  gap: var(--text_gap);
+  gap: var(--text_gap, 10px);
 }
 
 .gallery_gap {
-  gap: var(--gallery_gap);
+  gap: var(--gallery_gap, 10px);
 }
 
 .padding {
-  padding: 0 var(--padding) 0 var(--padding);
+  padding: 0 var(--padding, 10px) 0 var(--padding, 10px);
 }
 
 .header_padding {
-  padding: var(--padding);
+  padding: var(--padding, 10px);
 }
 
 /* Стили для ссылок */
 
 .link {
-  text-shadow: 2px 1px 0 var(--accent-color);
+  text-shadow: 2px 1px 0 var(--accent-color, #FF8DCB);
   text-decoration: none;
 }
 
 .link:hover {
-  border-bottom: 1px solid var(--main-text-color);
+  border-bottom: 1px solid var(--main-text-color, #353430);
 }
 
 .link:focus {
@@ -58,7 +58,7 @@
 }
 
 .link:focus-visible {
-  border: 1px solid var(--main-text-color);
+  border: 1px solid var(--main-text-color, #353430);
 }
 
 /* Хедер и всё что в нем */
@@ -85,12 +85,12 @@
 .decorated-zone::before {
   position: absolute;
   content: "";
-  top: var(--padding);
-  right: var(--padding);
+  top: var(--padding, 10px);
+  right: var(--padding, 10px);
   width: 25.04px;
   height: 25px;
   justify-self: end;
-  border: 1px solid var(--decoration-color);
+  border: 1px solid var(--decoration-color, #353430);
   border-bottom-style: none;
   border-left-style: none;
 }
@@ -103,11 +103,34 @@
   width: 25.04px;
   height: 25px;
   justify-self: start;
-  border: 1px solid var(--decoration-color);
+  border: 1px solid var(--decoration-color, #353430);
   border-top-style: none;
   border-right-style: none;
 }
 
+.decorate_element {
+  display: none;
+}
+
+.decorate_element::before {
+  position: absolute;
+  content: "REC";
+  top: var(--padding, 10px);
+  right: calc(var(--padding, 10px) + 27.9px);
+  color: var(--accent-color, #FF8DCB);
+}
+
+.decorate_element::after {
+  position: absolute;
+  content: "";
+  block-size: 9px;
+  inline-size: 9px;
+  background-color: var(--accent-color, #FF8DCB);
+  border-radius: 50%;
+  box-shadow: 0 0 5px 2px var(--accent-color, #FF8DCB);
+  top: calc(var(--padding, 10px) + 8px);
+  right: calc(var(--padding, 10px) + 10px);
+}
 
 .header__theme-menu {
   grid-area: theme-menu;
@@ -128,17 +151,18 @@
   background-color: transparent;
   text-transform: lowercase;
   padding-bottom: 5px;
-  color: var(--theme_switcher_color);
+  color: var(--theme_switcher_color, #32312D);
   border: none;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--theme_switcher_color);
+  border: 1px solid var(--theme_switcher_color, #32312D);
   pointer-events: none;
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--theme_switcher_color_hover);
+  border: 1px solid var(--theme_switcher_color_hover, #32312D40);
 }
 
 .header__theme-menu-button:focus {
@@ -146,21 +170,21 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--theme_switcher_color);
+  border-bottom: 1px solid var(--theme_switcher_color, #32312D);
 }
 
 .header__heading {
   grid-area: heading;
   justify-self: start;
   align-self: center;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--accent-color, #FF8DCB);
 }
 
 .heading {
   display: block;
-  font-family: var(--main-font);
-  font-size: var(--h1-font-size);
-  color: var(--heading-text-color);
+  font-family: var(--main-font, 'IBM Plex mono'), monospace;
+  font-size: var(--h1-font-size, clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem));
+  color: var(--heading-text-color, #FFC2E6);
   font-weight: bold;
   line-height: 82.5%;
 }
@@ -174,8 +198,8 @@
 /* Заголовки, секции*/
 
 .title-decor {
-  background-color: var(--accent-color);
-  color: var(--title-decorated-text-color);
+  background-color: var(--accent-color, #FF8DCB);
+  color: var(--title-decorated-text-color, #353430);
 }
 
 .content-section {
@@ -184,7 +208,7 @@
 
 .content-section h2, h3 {
   font-weight: bold;
-  color: var(--title-text-color);
+  color: var(--title-text-color, #353430);
 }
 
 .content_container {
@@ -217,7 +241,7 @@
 }
 
 .footer__heading {
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color, #FF8DCB);
 }
 
 /* Медиазапросы */
@@ -233,7 +257,7 @@
 }
 
   .heading {
-    margin-left: calc(var(--padding) * -1);
+    margin-left: calc(var(--padding, 20px) * -1);
 }
 
   .content-section {

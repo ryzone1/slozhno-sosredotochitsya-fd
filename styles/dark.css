@@ -21,13 +21,12 @@
   --theme_switcher_color_hover: #FF007040;
 }
 
-
-
-.theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+.theme-dark .decorate_element {
+  display: block;
 }
 
 @media (prefers-color-scheme: dark) {
+
   :root {
     --background-image: url(../images/cover-image-dark.png);
     --background-color: #000028;
@@ -41,25 +40,8 @@
     --theme_switcher_color_hover: #FF007040;
   }
 
-  .decorate_element::before {
+  .decorate_element {
     display: block;
-    position: absolute;
-    content: "REC";
-    top: var(--padding);
-    right: calc(var(--padding) + 27.9px);
-    color: var(--accent-color);
   }
-  
-  .decorate_element::after {
-    display: block;
-    position: absolute;
-    content: "";
-    block-size: 9px;
-    inline-size: 9px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    box-shadow: 0 0 5px 2px var(--accent-color);
-    top: calc(var(--padding) + 8px);
-    right: calc(var(--padding) + 10px);
-  }
+
 }

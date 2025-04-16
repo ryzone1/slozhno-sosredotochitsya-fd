@@ -10,7 +10,6 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --background-image: url(../images/cover-image-light.png);
-  /*Цвета*/
   --background-color: #fdf3f7;
   --accent-color: #FF8DCB;
   --main-text-color: #353430;
@@ -22,16 +21,15 @@
   --theme_switcher_color_hover: #32312D40;
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-
-  .decorate_element::before {
-    display: none;
-  }
-  
-  .decorate_element::after {
-    display: none;
-  }
-  
-
+.theme-light .decorate_element {
+  display: none;
 }
+
+  @media (prefers-color-scheme: light) {
+
+    .decorate_element {
+      display: none;
+    }
+
+  }
+

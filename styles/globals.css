@@ -23,7 +23,7 @@ p {
   font-weight: normal;
   font-size: var(--main-font-size);
   line-height: 23.4px;
-  text-wrap: pretty;
+
 }
 
 ul {

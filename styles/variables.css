@@ -22,12 +22,14 @@
   --padding: 10px;
 }
 
-@media (min-width: 1024px) {
-}
 
 @media (min-width: 768px) {
   :root {
     --padding: 20px;
     --gallery_gap: 20px;
+    --section_gap: 80px;
   }
+}
+
+@media (min-width: 1024px) {
 }
