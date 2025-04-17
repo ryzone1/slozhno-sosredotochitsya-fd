@@ -15,6 +15,7 @@
   --theme_switcher_color: #353430;
   --theme_switcher_color_hover: #32312D40;
   /*Отступы*/
+  --first_last_section_gap: 40px;
   --section_gap: 50px;
   --title_gap: 20px;
   --text_gap: 10px;
@@ -28,8 +29,7 @@
     --padding: 20px;
     --gallery_gap: 20px;
     --section_gap: 80px;
+    --first_section_gap: 60px;
   }
 }
 
-@media (min-width: 1024px) {
-}
