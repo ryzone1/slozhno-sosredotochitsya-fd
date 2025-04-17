@@ -260,7 +260,7 @@
       ". header_title"; 
 }
 
-  .heading {
+  .header__heading {
     margin-left: calc(var(--padding, 20px) * -1);
 }
 
