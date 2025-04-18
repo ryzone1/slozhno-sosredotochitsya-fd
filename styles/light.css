@@ -25,11 +25,4 @@
   display: none;
 }
 
-  @media (prefers-color-scheme: light) {
-
-    .decorate_element {
-      display: none;
-    }
-
-  }
 
