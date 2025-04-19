@@ -271,7 +271,7 @@
 }
 
 
-  .content_container_stretched_row {
+  .content_container_concentration_down {
     grid-column: span 3
   }
 
@@ -279,11 +279,19 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .gallery_image_stretched_columns {
+  .gallery_image_sunset {
     grid-column: span 2;
   }
 
-  .gallery_image_stretched_rows {
+  .gallery_street {
+    grid-column: span 2;
+  }
+
+  .gallery_image_icecream {
+    grid-row: span 2;
+  }
+
+  .gallery_audiotape {
     grid-row: span 2;
   }
 }
