@@ -271,7 +271,7 @@
 }
 
 
-  .content_container_one_row {
+  .content_container_stretched_row {
     grid-column: span 3
   }
 
@@ -279,11 +279,11 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .gallery_image_2_columns {
+  .gallery_image_stretched_columns {
     grid-column: span 2;
   }
 
-  .gallery_image_2_rows {
+  .gallery_image_stretched_rows {
     grid-row: span 2;
   }
 }
